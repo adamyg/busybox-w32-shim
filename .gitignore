@@ -1,3 +1,7 @@
+# Local build tree
+CVS/
+build/
+
 # Prerequisites
 *.d
 
