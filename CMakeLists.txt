@@ -35,7 +35,9 @@ file(GLOB SOURCE_FILES ./apps/*.c)
 foreach(SOURCE_PATH ${SOURCE_FILES})
 
 	get_filename_component(EXECUTABLE_NAME ${SOURCE_PATH} NAME_WE)
+
 	add_executable(${EXECUTABLE_NAME} ${SOURCE_PATH} ./shim/shim.c ./shim/shim.rc)
+	set_target_properties(${EXECUTABLE_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
 
 endforeach(SOURCE_PATH ${SOURCE_FILES})
 
