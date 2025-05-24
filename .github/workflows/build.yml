@@ -53,7 +53,7 @@ jobs:
         @if "${{ matrix.config.toolchain }}"=="mingw32" set PATH=c:\msys64\mingw32\bin;%PATH%
         @if "${{ matrix.config.toolchain }}"=="mingw64" set PATH=c:\msys64\mingw64\bin;%PATH%
         cd build
-        ${{ matrix.config.toolchain }}-make all
+        mingw32-make all
 
     - name: Package
       uses: actions/upload-artifact@v4

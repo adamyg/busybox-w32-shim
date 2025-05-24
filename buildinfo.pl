@@ -1,9 +1,10 @@
 #!/usr/bin/perl -w
 # -*- mode: perl; -*-
-# $Id: buildinfo.pl,v 1.1 2025/05/24 16:08:20 cvsuser Exp $
+# $Id: buildinfo.pl,v 1.2 2025/05/24 16:24:22 cvsuser Exp $
 # buildinfo generation
 #
-# busybox-w32-shim, Copyright (c) 2025 Adam Young
+# Copyright (c) 2024 - 2025, Adam Young.
+#
 # https://github.com/adamyg/busybox-w32-shim
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
