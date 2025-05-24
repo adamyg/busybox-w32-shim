@@ -67,6 +67,7 @@ jobs:
       if: startsWith(matrix.config.name, 'Windows')
       uses: softprops/action-gh-release@v2
       with:
-        files: build/${{ matrix.config.packagelabel }}.zip
+        files: ./build/${{ matrix.config.packagelabel }}.zip
         draft: true
+
 

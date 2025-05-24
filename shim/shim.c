@@ -109,10 +109,10 @@ ShimErrorMessage(const wchar_t *name, DWORD wrc)
         if (nl) *nl = 0;
         if (rt) *rt = 0;
 
-        wprintf(L"%s: unable to execute child : %s (0x%08lx)\n", name, message, wrc);
+        wprintf(L"%ls: unable to execute child : %ls (0x%08lx)\n", name, message, wrc);
 
     } else {
-        wprintf(L"%s: unable to execute child : 0x%08lx.\n", name, wrc);
+        wprintf(L"%ls: unable to execute child : 0x%08lx.\n", name, wrc);
     }
 
     LocalFree(message);
@@ -155,29 +155,29 @@ ApplicationShimCmd(const wchar_t *name, const wchar_t *alias, const wchar_t *cmd
 
     // build path
     if (pathsz >= _countof(orgpath)) {
-        wprintf(L"%s: command line too long.\n", name);
+        wprintf(L"%ls: command line too long.\n", name);
         return;
     }
 
     if (diagositics) {
-        wprintf(L"ORG: %s\n", orgpath);
-        wprintf(L"CMD: %s\n", cmdline);
+        wprintf(L"ORG: %ls\n", orgpath);
+        wprintf(L"CMD: %ls\n", cmdline);
     }
 
     wmemcpy(newpath, orgpath, pathsz);
     if (NULL == (base = Basename(newpath)) || !*base) {
-        wprintf(L"%s: command line invalid.\n", name);
+        wprintf(L"%ls: command line invalid.\n", name);
         return;
 
     } else if ((base + aliassz) >= (newpath + _countof(newpath))) {
-        wprintf(L"%s: command line too long.\n", name);
+        wprintf(L"%ls: command line too long.\n", name);
         return;
     }
     wmemcpy(base, alias, aliassz + 1 /*NUL*/);
 
         //wmemcpy(newpath, L".\\testapp.exe", 13 + 1);
     if (diagositics) {
-        wprintf(L"NEW: %s\n", newpath);
+        wprintf(L"NEW: %ls\n", newpath);
     }
 
     // execute child
