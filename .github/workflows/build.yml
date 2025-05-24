@@ -60,8 +60,8 @@ jobs:
     - name: Package
       uses: actions/upload-artifact@v4
       with:
-        name:  package-${{ matrix.config.toolchain }}
-        path:  build/*.exe
+        name: package-${{ matrix.config.toolchain }}
+        path: build/*.exe
 
     - name: Release artifacts
       if: startsWith(matrix.config.name, 'Windows')
