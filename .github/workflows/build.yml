@@ -11,13 +11,13 @@ jobs:
         - {
            name: "Windows Latest MinGW32",
            os: windows-latest,
-           toolchain: mingw32
+           toolchain: mingw32,
            packagelabel: busybox-shim-x86
           }
         - {
            name: "Windows Latest MinGW64",
            os: windows-latest,
-           toolchain: mingw64
+           toolchain: mingw64,
            packagelabel: busybox-shim-x64
           }
 
