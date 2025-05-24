@@ -2,11 +2,11 @@
 
 BusyBox for Windows, application shims, providing an alternative installation method to _busybox --install_.
 
-Providing an installation with a smaller storage foot print and/or for environments where links can not be created or are suitable.
+Providing an installation for environments where links can not be created or are suitable.
 
 Simply unzip the application shims into a target directory along-side a current busybox for windows binary.
 
-Example Installation:
+## Example Installation:
 
  * Download _package-x86.zip_ or _package-x64.zip_, dependent on your requirements.
 
@@ -19,8 +19,10 @@ Example Installation:
         copy  C:\Users\%USERNAME%\Downloads\busybox.exe c:\busybox
 
  * Add the installation directory to your PATH.   
- 
-Once installed, busybox commands can be executing using thier application name, for example:
+
+## Usage
+
+Once installed, busybox commands can be executing using their _applet_ name, for example:
        
         $ ./grep
         
