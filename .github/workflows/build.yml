@@ -35,6 +35,7 @@ jobs:
         c:\msys64\usr\bin\pacman --noconfirm -S base-devel
         c:\msys64\usr\bin\pacman --noconfirm -S mingw-w64-x86_64-gcc
         c:\msys64\usr\bin\pacman --noconfirm -S mingw-w64-i686-gcc
+        c:\msys64\usr\bin\pacman --noconfirm -S zip
 
     - name: Generate
       if: startsWith(matrix.config.name, 'Windows')
