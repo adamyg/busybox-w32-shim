@@ -1,11 +1,11 @@
 #!/usr/bin/perl -w
 # -*- mode: perl; -*-
-# $Id: busyboxcmds.pl,v 1.2 2025/05/24 16:24:22 cvsuser Exp $
+# $Id: busyboxcmds.pl,v 1.3 2025/05/24 19:30:24 cvsuser Exp $
 # busybox command line generation
 #
 # Copyright (c) 2024 - 2025, Adam Young.
 #
-# https://github.com/adamyg/busybox-w32-shim
+# https://github.com/adamyg/busybox-w32-shims
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
