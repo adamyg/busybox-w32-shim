@@ -1,4 +1,4 @@
-# busybox-w32-shim
+# busybox-w32-shims
 
 BusyBox for Windows, application shims, providing an alternative installation method to _busybox --install_.
 
@@ -8,7 +8,7 @@ Simply unzip the application shims into a target directory along-side a current 
 
 ## Example Installation:
 
- * Download _package-x86.zip_ or _package-x64.zip_, dependent on your requirements.
+ * Download _busybox-shims-x86.zip_ or _busybox-shims-x64.zip_, dependent on your requirements.
 
  * Download the current busybox from https://frippery.org/busybox.
 
