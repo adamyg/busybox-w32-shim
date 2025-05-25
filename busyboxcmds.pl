@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 # -*- mode: perl; -*-
-# $Id: busyboxcmds.pl,v 1.3 2025/05/24 19:30:24 cvsuser Exp $
+# $Id: busyboxcmds.pl,v 1.4 2025/05/24 20:19:50 cvsuser Exp $
 # busybox command line generation
 #
 # Copyright (c) 2024 - 2025, Adam Young.
@@ -35,12 +35,14 @@ use Capture::Tiny qw(capture capture_merged);
 
 my $output  = "./apps";
 my $busybox = "busybox";
+my $notcmd  = 0;
 
 my $help    = 0;
 
 Usage() if (0 == GetOptions(
 		'output|o=s'    => \$output,
 		'busybox|x=s'   => \$busybox,
+		'notcmd'        => \$notcmd,
 		'help|h'        => \$help)
 			|| $help);
 
@@ -50,14 +52,17 @@ sub
 Generate	#()
 {
 	# cmd, list
-	my ($cmdhelp) = capture_merged {
-		system("cmd", "/c help");
-	};
-
 	my %cmdhash;
-	foreach (split(/[\r\n]+/, $cmdhelp)) {
-		$cmdhash{lc($1)} = 1 
-			if (/^([A-Za-z]+)/);
+
+	if ($notcmd) {
+		my ($cmdhelp) = capture_merged {
+			system("cmd", "/c help");
+		};
+
+		foreach (split(/[\r\n]+/, $cmdhelp)) {
+			$cmdhash{lc($1)} = 1 
+				if (/^([A-Za-z]+)/);
+		}
 	}
 
 	$cmdhash{'busybox'} = 1;
@@ -123,10 +128,11 @@ EOT
 			die "cannot create <${output}/${cmd}.c}> : $!\n";
 
 		print FILE <<"SHIM";
-// Auto-generated application shim for ${cmd}
+// Auto-generated application shim for busybox applet <${cmd}>
 //
-// busybox-w32-shim, Copyright (c) 2025 Adam Young
-// https://github.com/adamyg/busybox-w32-shim
+// Copyright (c) 2025 Adam Young
+//
+// https://github.com/adamyg/busybox-w32-shims
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -173,6 +179,7 @@ Usage: perl busyboxcmds.pl [options]
 Options:
     --output <file>         Output file.
     --busybox <path>        busybox executable fullname.
+    --notcmd                dont generate shims for duplicate cmd applets.
     --help                  Help.
 
 EOU
