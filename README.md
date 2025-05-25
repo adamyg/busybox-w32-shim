@@ -227,7 +227,7 @@ List of current applets.
   * yes
   * zcat
 
-The following are explicity omitted, since they generally crash with local development tools:
+Note the following are explicity omitted, since they generally clash with local development tools:
 
   * install
   * link
