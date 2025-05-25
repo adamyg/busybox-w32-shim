@@ -1,7 +1,8 @@
-// Auto-generated application shim for dpkg-deb
+// Auto-generated application shim for busybox applet <dpkg-deb>
 //
-// busybox-w32-shim, Copyright (c) 2025 Adam Young
-// https://github.com/adamyg/busybox-w32-shim
+// Copyright (c) 2025 Adam Young
+//
+// https://github.com/adamyg/busybox-w32-shims
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal

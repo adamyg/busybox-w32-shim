@@ -12,13 +12,13 @@ jobs:
            name: "Windows Latest MinGW32",
            os: windows-latest,
            toolchain: mingw32,
-           packagelabel: busybox-shim-x86
+           packagelabel: busybox-shims-x86
           }
         - {
            name: "Windows Latest MinGW64",
            os: windows-latest,
            toolchain: mingw64,
-           packagelabel: busybox-shim-x64
+           packagelabel: busybox-shims-x64
           }
 
     steps:
@@ -69,4 +69,3 @@ jobs:
       with:
         files: ./build/${{ matrix.config.packagelabel }}.zip
         draft: true
-
