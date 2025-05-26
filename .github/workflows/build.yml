@@ -12,13 +12,13 @@ jobs:
            name: "Windows Latest MinGW32",
            os: windows-latest,
            toolchain: mingw32,
-           packagelabel: busybox-shims-x86
+           packagelabel: busybox-shims-x86-${{github.run_number}}
           }
         - {
            name: "Windows Latest MinGW64",
            os: windows-latest,
            toolchain: mingw64,
-           packagelabel: busybox-shims-x64
+           packagelabel: busybox-shims-x64-${{github.run_number}}
           }
 
     steps:

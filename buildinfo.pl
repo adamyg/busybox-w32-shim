@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 # -*- mode: perl; -*-
-# $Id: buildinfo.pl,v 1.4 2025/05/26 05:33:33 cvsuser Exp $
+# $Id: buildinfo.pl,v 1.5 2025/05/26 05:39:45 cvsuser Exp $
 # buildinfo generation
 #
 # Copyright (c) 2024 - 2025, Adam Young.
@@ -37,7 +37,7 @@ my $prefix      = "";
 
 my $package     = "busybox-shims";
 my $packagename = "Busybox Windows Shims";
-my $version     = "1.0.3";
+my $version     = "1.0.2";
 
 my $builddate   = undef;
 my $buildyear   = undef;
