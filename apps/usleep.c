@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"usleep", L"busybox.exe");
+    ApplicationShim0(L"usleep", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

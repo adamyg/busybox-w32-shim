@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"unexpand", L"busybox.exe");
+    ApplicationShim0(L"unexpand", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

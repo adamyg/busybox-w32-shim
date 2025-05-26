@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 # -*- mode: perl; -*-
-# $Id: busyboxcmds.pl,v 1.5 2025/05/25 04:49:33 cvsuser Exp $
+# $Id: busyboxcmds.pl,v 1.6 2025/05/26 05:33:33 cvsuser Exp $
 # busybox command line generation
 #
 # Copyright (c) 2024 - 2025, Adam Young.
@@ -60,15 +60,15 @@ Generate	#()
 		};
 
 		foreach (split(/[\r\n]+/, $cmdhelp)) {
-			$cmdhash{lc($1)} = 1 
+			$cmdhash{lc($1)} = 1
 				if (/^([A-Za-z]+)/);
 		}
 	}
 
-	$cmdhash{'busybox'} = 1;
-	$cmdhash{'install'} = 1;
-	$cmdhash{'link'}    = 1;
-	$cmdhash{'make'}    = 1;
+	$cmdhash{'busybox'} = 2;    # remove
+	$cmdhash{'install'} = 1;    # rename
+	$cmdhash{'link'} = 1;
+	$cmdhash{'make'} = 1;
 
 	# busybox, version
 	my ($bxout, $bxerr, $bxexit) = capture {
@@ -105,7 +105,8 @@ EOT
 	foreach (@bxcmds) {
 		(!/^\[/) || next;
 		if (exists $cmdhash{$_}) { # filter cmd's
-			print FILE "\t// \"$_\",\n";
+			print FILE "\t// \"$_\",\n"
+				if ($cmdhash{$_} == 1);
 		} else {
 			print FILE "\t\"$_\",\n";
 		}
@@ -121,11 +122,19 @@ EOT
 	# application shims
 	foreach (@bxcmds) {
 		(!/^\[/) || next;
-		next if (exists $cmdhash{$_});
-		my $cmd = $_;
 
-		open(FILE, ">${output}/${cmd}.c") or
-			die "cannot create <${output}/${cmd}.c}> : $!\n";
+		my $cmd   = $_;
+		my $alias = $_;
+
+		if (exists $cmdhash{$_}) {
+			next if ($cmdhash{$_} == 2); # filter
+
+			$alias = "busybox-$_" # alternative name
+				if (exists $cmdhash{$_});
+		}
+
+		open(FILE, ">${output}/${alias}.c") or
+			die "cannot create <${output}/${alias}.c}> : $!\n";
 
 		print FILE <<"SHIM";
 // Auto-generated application shim for busybox applet <${cmd}>
@@ -158,7 +167,7 @@ EOT
 int
 main(void)
 {
-    ApplicationShim(L"${cmd}", L"busybox.exe");
+    ApplicationShim0(L"${cmd}", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"wget", L"busybox.exe");
+    ApplicationShim0(L"wget", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

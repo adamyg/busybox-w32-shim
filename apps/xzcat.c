@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"xzcat", L"busybox.exe");
+    ApplicationShim0(L"xzcat", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

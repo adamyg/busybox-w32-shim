@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"unxz", L"busybox.exe");
+    ApplicationShim0(L"unxz", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

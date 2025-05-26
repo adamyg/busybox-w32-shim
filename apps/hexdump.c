@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"hexdump", L"busybox.exe");
+    ApplicationShim0(L"hexdump", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

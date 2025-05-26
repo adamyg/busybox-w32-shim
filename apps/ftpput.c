@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"ftpput", L"busybox.exe");
+    ApplicationShim0(L"ftpput", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

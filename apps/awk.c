@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"awk", L"busybox.exe");
+    ApplicationShim0(L"awk", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

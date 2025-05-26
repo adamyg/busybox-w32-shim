@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"rpm2cpio", L"busybox.exe");
+    ApplicationShim0(L"rpm2cpio", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

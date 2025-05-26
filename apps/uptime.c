@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"uptime", L"busybox.exe");
+    ApplicationShim0(L"uptime", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

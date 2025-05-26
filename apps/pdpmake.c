@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"pdpmake", L"busybox.exe");
+    ApplicationShim0(L"pdpmake", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

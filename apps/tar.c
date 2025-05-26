@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"tar", L"busybox.exe");
+    ApplicationShim0(L"tar", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

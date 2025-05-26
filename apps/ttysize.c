@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"ttysize", L"busybox.exe");
+    ApplicationShim0(L"ttysize", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

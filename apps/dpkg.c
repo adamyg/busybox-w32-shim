@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"dpkg", L"busybox.exe");
+    ApplicationShim0(L"dpkg", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

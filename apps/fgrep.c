@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"fgrep", L"busybox.exe");
+    ApplicationShim0(L"fgrep", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

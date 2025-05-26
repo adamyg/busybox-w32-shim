@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"unix2dos", L"busybox.exe");
+    ApplicationShim0(L"unix2dos", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

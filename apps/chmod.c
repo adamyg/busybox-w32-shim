@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"chmod", L"busybox.exe");
+    ApplicationShim0(L"chmod", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

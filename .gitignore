@@ -1,6 +1,7 @@
 # Local build tree
 CVS/
 build/
+buildinfo.h
 
 # Prerequisites
 *.d
