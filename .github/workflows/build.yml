@@ -55,7 +55,7 @@ jobs:
         @if "${{ matrix.config.toolchain }}"=="mingw64" set PATH=c:\msys64\mingw64\bin;%PATH%
         cd build
         mingw32-make all
-        c:\msys64\usr\bin\zip ${{ matrix.config.packagelabel }}-${{ env.GITHUB_RUN_NUMBER }}.zip *.exe
+        c:\msys64\usr\bin\zip ${{ matrix.config.packagelabel }}-${{ github.run_number }}.zip *.exe
 
     - name: Package
       uses: actions/upload-artifact@v4
@@ -67,5 +67,5 @@ jobs:
       if: startsWith(matrix.config.name, 'Windows')
       uses: softprops/action-gh-release@v2
       with:
-        files: ./build/${{ matrix.config.packagelabel }}-${{ env.GITHUB_RUN_NUMBER }}.zip
+        files: ./build/${{ matrix.config.packagelabel }}-${{ github.run_number }}.zip
         draft: true
