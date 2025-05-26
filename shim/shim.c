@@ -1,7 +1,7 @@
 /*
  * libshim -- application shim
  *
- * Copyright (c) 2024 - 2025, Adam Young    .
+ * Copyright (c) 2024 - 2025, Adam Young.
  *
  * https://github.com/adamyg/busybox-w32-shims
  *
@@ -183,7 +183,7 @@ ApplicationShim0(const wchar_t *name, const wchar_t *alias)
         while (*arg1 == ' ') ++arg1; // consume whitespace
     }
 
-    ocmdlen = (arg1 ? wcslen(cmdline) + 1: 0);
+    ocmdlen = (arg1 ? wcslen(arg1) + 1 : 0);
     ncmdlen = wcslen(name) + ocmdlen + 1;
 
     if (NULL == (ncmdline = (wchar_t *) calloc(ncmdlen, sizeof(wchar_t)))) {
@@ -191,10 +191,10 @@ ApplicationShim0(const wchar_t *name, const wchar_t *alias)
         return;
     }
 
-    wcscpy(ncmdline, name);
+    wcscpy_s(ncmdline, ncmdlen, name);
     if (arg1) {
-        wcscat(ncmdline, L" ");
-        wcscat(ncmdline, arg1);
+        wcscat_s(ncmdline, ncmdlen, L" ");
+        wcscat_s(ncmdline, ncmdlen, arg1);
     }
 
     if (diagositics) {
