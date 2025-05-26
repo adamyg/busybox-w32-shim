@@ -15,7 +15,6 @@ static const char *busyboxcmds[] = {
 	"bash",
 	"bc",
 	"bunzip2",
-	// "busybox",
 	"bzcat",
 	"bzip2",
 	"cal",

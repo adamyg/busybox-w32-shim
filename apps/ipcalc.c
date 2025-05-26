@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"ipcalc", L"busybox.exe");
+    ApplicationShim0(L"ipcalc", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

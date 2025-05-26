@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"unlzma", L"busybox.exe");
+    ApplicationShim0(L"unlzma", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

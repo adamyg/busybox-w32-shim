@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"base64", L"busybox.exe");
+    ApplicationShim0(L"base64", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

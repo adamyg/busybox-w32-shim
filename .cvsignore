@@ -1,4 +1,6 @@
 build
+buildinfo.h
 .git
 .vs
 sav
+

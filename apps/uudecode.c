@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"uudecode", L"busybox.exe");
+    ApplicationShim0(L"uudecode", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

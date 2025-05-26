@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"httpd", L"busybox.exe");
+    ApplicationShim0(L"httpd", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

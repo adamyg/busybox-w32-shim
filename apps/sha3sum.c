@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"sha3sum", L"busybox.exe");
+    ApplicationShim0(L"sha3sum", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

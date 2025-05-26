@@ -227,9 +227,22 @@ List of current applets.
   * yes
   * zcat
 
-Note the following are explicity omitted, since they generally clash with local development tools:
+Note the following are explicity prefixed with "busybox-", as they generally clash with local development tools:
 
   * install
   * link
   * make
+  
+If further local conflicts arise, the straightforward solution is to rename the shim in a similar manner, 
+for instance:
 
+    $ .\busybox date -u
+    Sun May 25 12:59:01 UTC 2025
+
+    $ .\date -u
+    Sun May 25 12:59:04 UTC 2025   
+
+    $ mv date.exe busybox-date.exe
+
+    $ .\busybox-date -u
+    Sun May 25 12:59:36 UTC 2025

@@ -1,4 +1,4 @@
-// Auto-generated application shim for busybox applet <cpio>
+// Auto-generated application shim for busybox applet <make>
 //
 // Copyright (c) 2025 Adam Young
 //
@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim0(L"cpio", L"busybox.exe");
+    ApplicationShim0(L"make", L"busybox.exe");
     return EXIT_FAILURE;
 }
 

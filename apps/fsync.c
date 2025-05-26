@@ -28,7 +28,7 @@
 int
 main(void)
 {
-    ApplicationShim(L"fsync", L"busybox.exe");
+    ApplicationShim0(L"fsync", L"busybox.exe");
     return EXIT_FAILURE;
 }
 
