@@ -246,3 +246,21 @@ for instance:
 
     $ .\busybox-date -u
     Sun May 25 12:59:36 UTC 2025
+
+##  Globbing
+
+The characters '\?' and '\*' can be are treated as wildcards on the command line in both Microsoft Windows and Unix. 
+In both cases the wildcards are expanded by matching against filenames, a process known as 'globbing'. A '?' matches a single character and '*' matches multiple characters.
+
+In Unix wildcards are expanded by the shell and any matching filenames are passed as arguments to the program being run. 
+In Windows the command intepreter passes unexpanded arguments to the program and the C runtime library performs the expansion. 
+In both cases the expansion happens before the main function of the program is executed.
+
+These different mechanisms for globbing result in a difficulty for BusyBox on Windows.
+BusyBox contains a Unix-style shell, which performs Unix-style globbing on the command line, but busybox.exe is a Windows command line program, which would normally have globbing performed by the C runtime.
+
+To enable the environment variable BB_GLOBBING can be set to a non-zero value.
+
+```
+set BB_GLOBBING=1
+```
